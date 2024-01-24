@@ -5236,6 +5236,7 @@ GameObject:
   - component: {fileID: 1410395682}
   - component: {fileID: 1410395681}
   - component: {fileID: 1410395680}
+  - component: {fileID: 1410395685}
   - component: {fileID: 1410395684}
   m_Layer: 5
   m_Name: UI
@@ -5336,7 +5337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410395679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e2bc41267c11654f9e76aa7cbbc2a35, type: 3}
   m_Name: 
@@ -5345,6 +5346,20 @@ MonoBehaviour:
   buttonParent: {fileID: 341074891}
   displayText: {fileID: 1106911817}
   equalButton: {fileID: 894191764}
+--- !u!114 &1410395685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410395679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  button: {fileID: 1606540484}
+  buttonText: {fileID: 286621717}
 --- !u!1 &1433706235
 GameObject:
   m_ObjectHideFlags: 0
