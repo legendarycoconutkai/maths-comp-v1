@@ -9,7 +9,6 @@ public class ButtonGenerator : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public GameObject buttonParent;
-    public GameObject equation;
 
     private void OnEnable()
     {
