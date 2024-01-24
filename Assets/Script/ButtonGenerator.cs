@@ -9,6 +9,7 @@ public class ButtonGenerator : MonoBehaviour
 {
     public GameObject buttonPrefab;
     public GameObject buttonParent;
+    public GameObject equation;
 
     private void OnEnable()
     {
@@ -18,7 +19,7 @@ public class ButtonGenerator : MonoBehaviour
         {
             int counter = i+1;
             GameObject newButton = Instantiate(buttonPrefab, buttonParent.transform);
-            string buttonText = operators[Random.Range(0,5)];
+            string buttonText = operators[Random.Range(0,operators.Length)];
             newButton.GetComponent<ButtonInfo>().buttonText.text = buttonText;
 
             Button button = newButton.GetComponent<Button>();
