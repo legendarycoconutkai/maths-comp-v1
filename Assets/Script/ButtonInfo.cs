@@ -29,6 +29,6 @@ public class ButtonInfo : MonoBehaviour
     {"0", true},
     {"!", false},
     {"^2", true},
-    {"sqrt", true}
+    {"sqrt", true}
     };
 }
