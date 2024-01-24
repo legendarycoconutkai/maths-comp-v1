@@ -12,10 +12,10 @@ public class ButtonGenerator : MonoBehaviour
     {
         for (int i = 0; i<24; i++)
         {
-            int counter = 1;
-            counter++;
+            int counter = i+1;
             GameObject newButton = Instantiate(buttonPrefab, buttonParent.transform);
             newButton.GetComponent<ButtonInfo>().buttonText.text = "Button"+i;
+            newButton.GetComponent<Button>().onClick.RemoveAllListeners();
             newButton.GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Button" + i + "Clicked"); }) ;
         }
     }
