@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2867424747
+    locked: 0
+  - name: Characters
+    uniqueID: 2177220979
+    locked: 0
+  - name: Equation
+    uniqueID: 4146760575
+    locked: 0
