@@ -16,7 +16,7 @@ public class ButtonGenerator : MonoBehaviour
             GameObject newButton = Instantiate(buttonPrefab, buttonParent.transform);
             newButton.GetComponent<ButtonInfo>().buttonText.text = "Button"+i;
             newButton.GetComponent<Button>().onClick.RemoveAllListeners();
-            newButton.GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Button" + i + "Clicked"); }) ;
+            newButton.GetComponent<Button>().onClick.AddListener(() => { Debug.Log("Button" + counter + "Clicked");}) ;
         }
     }
 }
