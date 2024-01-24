@@ -19,17 +19,17 @@ public class ButtonGenerator : MonoBehaviour
     private void OnEnable()
     {
         string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
-        GameObject[] buttons = new GameObject[24];
 
         for (int i = 0; i < 24; i++)
         {
-            buttons[i] = Instantiate(buttonPrefab, buttonParent.transform);
+            int counter = i + 1;
+            GameObject newButton = Instantiate(buttonPrefab, buttonParent.transform);
             string buttonText = operators[Random.Range(0, operators.Length)];
-            buttons[i].GetComponent<ButtonInfo>().buttonText.text = buttonText;
-            int j = i;
-            Button button = buttons[i].GetComponent<Button>();
-            buttons[i].GetComponent<Button>().onClick.RemoveAllListeners();
-            buttons[i].GetComponent<Button>().onClick.AddListener(() => { OnButtonClick(buttons[j]); });
+            newButton.GetComponent<ButtonInfo>().buttonText.text = buttonText;
+
+            Button button = newButton.GetComponent<Button>();
+            newButton.GetComponent<Button>().onClick.RemoveAllListeners();
+            newButton.GetComponent<Button>().onClick.AddListener(() => { OnButtonClick(buttonText); });
         }
 
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
@@ -37,15 +37,12 @@ public class ButtonGenerator : MonoBehaviour
     /*private void OnButtonClick(int buttonNumber, string buttonText)
     {
         Debug.Log("Button " + buttonNumber + " Clicked Text: " + buttonText);
-    }*/ 
+    }*/
 
-    public void OnButtonClick(GameObject button)
+    public void OnButtonClick(string buttonValue)
     {
-        currentInput += button.GetComponent<ButtonInfo>().buttonText.text;
+        currentInput += buttonValue;
         UpdateDisplay();
-        Color col = button.GetComponent<Image>().color;
-        col.a = 30;
-        button.GetComponent<Image>().color = col;
     }
     public void CalculateResult()
     {
