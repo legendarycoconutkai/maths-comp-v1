@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
+using static Unity.Burst.Intrinsics.X86.Avx;
 using UnityEngine.UI;
+using TMPro;
 
-
-public class ButtonGenerator : MonoBehaviour
+public class buttonGenerator : MonoBehaviour
 {
-    public GameObject buttonPrefab;
-    public GameObject buttonParent;
+    public GameObject[] button;
+    public TextMeshProUGUI[] buttonText;
+    string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
     public TextMeshProUGUI displayText;
     private string currentInput = "";
@@ -18,28 +18,17 @@ public class ButtonGenerator : MonoBehaviour
 
     private void OnEnable()
     {
-        string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
-
-        for (int i = 0; i < 24; i++)
-        {
-            int counter = i + 1;
-            GameObject newButton = Instantiate(buttonPrefab, buttonParent.transform);
-            string buttonText = operators[Random.Range(0, operators.Length)];
-            newButton.GetComponent<ButtonInfo>().buttonText.text = buttonText;
-
-            Button button = newButton.GetComponent<Button>();
-            newButton.GetComponent<Button>().onClick.RemoveAllListeners();
-            newButton.GetComponent<Button>().onClick.AddListener(() => { OnButtonClick(buttonText); });
-        }
-
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
-    }
-    /*private void OnButtonClick(int buttonNumber, string buttonText)
-    {
-        Debug.Log("Button " + buttonNumber + " Clicked Text: " + buttonText);
-    }*/
 
-    public void OnButtonClick(string buttonValue)
+        for (int i = 0; i < button.Length; i++)
+        {
+            button[i].SetActive(true);
+            string text = operators[Random.Range(0, operators.Length)];
+            buttonText[i].text = text;
+            button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text); });
+        }
+    }
+    public void firstClick(string buttonValue)
     {
         currentInput += buttonValue;
         UpdateDisplay();
