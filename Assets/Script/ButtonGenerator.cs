@@ -10,7 +10,7 @@ public class buttonGenerator : MonoBehaviour
 {
     public GameObject[] button;
     public TextMeshProUGUI[] buttonText;
-    static Boolean[] buttonState;
+    static bool[] buttonState;
     string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
     public TextMeshProUGUI displayText;
@@ -20,43 +20,93 @@ public class buttonGenerator : MonoBehaviour
 
     private void OnEnable()
     {
+        buttonState = new bool[button.Length];
+
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
 
         for (int i = 0; i < button.Length; i++)
         {
+
+            // Activation of button
             button[i].SetActive(true);
             string text = operators[UnityEngine.Random.Range(0, operators.Length)];
             buttonText[i].text = text;
-            //Boolean state = true;
-            //buttonState[i] = state;
+            // Boolean state = true;
+
+            // State of button is initialized to true
+            buttonState[i] = true;
+
+            int j = i;
+
             button[i].GetComponent<Button>().onClick.RemoveAllListeners();
-            button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text); });
+            button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text, j); });
             
         }
     }
 
-    public void SecondClick()
+    public void firstClick(string buttonValue, int buttonIndex)
     {
-
-    }
-
-    public void firstClick(string buttonValue)
-    {
-        /*if(state == true)
+        if (buttonState[buttonIndex])
         {
             currentInput += buttonValue;
+            buttonState[buttonIndex] = false; //Set button state to false after first click
             UpdateDisplay();
         }
 
         else
         {
-            currentInput = buttonValue;
-            UpdateDisplay();
-        } */
-
-        currentInput += buttonValue;
-        UpdateDisplay();
+            for (int i = 0; i < currentInput.Length; i++) 
+            {
+                if (buttonValue == currentInput.Substring(i))
+                {
+                    currentInput = currentInput.Remove(i,1);
+                    buttonState[buttonIndex] = true;
+                }
+                
+            }     
+         }
+            UpdateDisplay();       
     }
+
+    /*public void firstClick(string buttonValue, int buttonIndex)
+    {
+        // Check if buttonIndex is within the valid range
+        if (buttonIndex < 0 || buttonIndex >= buttonState.Length)
+        {
+            Debug.LogError("Invalid buttonIndex: " + buttonIndex);
+            return;
+        }
+
+        // Check if buttonState array has been initialized and has the expected length
+        if (buttonState == null || buttonState.Length != button.Length)
+        {
+            Debug.LogError("Invalid buttonState array");
+            return;
+        }
+
+        // Check if currentInput is not null
+        if (currentInput == null)
+        {
+            Debug.LogError("currentInput is null");
+            return;
+        }
+
+        if (buttonState[buttonIndex])
+        {
+            currentInput += buttonValue;
+            buttonState[buttonIndex] = false; // Set the state to false after the first click
+        }
+        else
+        {
+            // Handle removing the text (e.g., removing the last character)
+            if (currentInput.Length > 0)
+            {
+                currentInput = currentInput.Substring(0, currentInput.Length - 1);
+            }
+        }
+
+        UpdateDisplay();
+    }*/
     public void CalculateResult()
     {
         try
