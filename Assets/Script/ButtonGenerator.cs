@@ -25,6 +25,7 @@ public class buttonGenerator : MonoBehaviour
             button[i].SetActive(true);
             string text = operators[Random.Range(0, operators.Length)];
             buttonText[i].text = text;
+            button[i].GetComponent<Button>().onClick.RemoveAllListeners();
             button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text); });
         }
     }
