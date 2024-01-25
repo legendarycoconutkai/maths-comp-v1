@@ -473,7 +473,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 12516038}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[3].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &12516038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -728,7 +740,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 84165178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[6].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &84165178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +873,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 113965915}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[1].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &113965915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -924,7 +960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.5, y: -248.5}
+  m_AnchoredPosition: {x: 404.50003, y: -248.5}
   m_SizeDelta: {x: 141, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &147819949
@@ -970,7 +1006,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 147819950}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[8].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &147819950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,7 +1139,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 161583393}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[22].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &161583393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2299,7 +2359,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 451022917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[4].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &451022917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,7 +2626,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 504934510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[9].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &504934510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,7 +2851,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 572333770}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[18].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &572333770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2888,7 +2984,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 604070290}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[15].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &604070290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3315,7 +3423,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.5, y: -100.5}
+  m_AnchoredPosition: {x: 404.50003, y: -100.5}
   m_SizeDelta: {x: 141, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813681843
@@ -3361,7 +3469,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 813681844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[2].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &813681844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3463,7 +3583,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 894191766}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: CalculateResult
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &894191766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3884,7 +4016,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 965390031}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[21].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &965390031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4273,7 +4417,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1087214809}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[12].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1087214809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4581,7 +4737,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1164712998}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[19].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1164712998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4930,7 +5098,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1173043728}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[16].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1173043728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5185,7 +5365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1339683115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[17].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1339683115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5358,8 +5550,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button: {fileID: 1606540484}
-  buttonText: {fileID: 286621717}
+  button:
+  - {fileID: 1606540484}
+  - {fileID: 113965912}
+  - {fileID: 813681841}
+  - {fileID: 12516035}
+  - {fileID: 451022914}
+  - {fileID: 1572456914}
+  - {fileID: 84165175}
+  - {fileID: 1657105621}
+  - {fileID: 147819947}
+  - {fileID: 504934507}
+  - {fileID: 1433706235}
+  - {fileID: 2134654863}
+  - {fileID: 1087214806}
+  - {fileID: 1744549882}
+  - {fileID: 1619273503}
+  - {fileID: 604070287}
+  - {fileID: 1173043725}
+  - {fileID: 1339683112}
+  - {fileID: 572333767}
+  - {fileID: 1164712995}
+  - {fileID: 2090354691}
+  - {fileID: 965390028}
+  - {fileID: 161583390}
+  - {fileID: 1630171445}
+  buttonText:
+  - {fileID: 286621717}
+  - {fileID: 1909813061}
+  - {fileID: 974498739}
+  - {fileID: 333076021}
+  - {fileID: 1037105207}
+  - {fileID: 349420635}
+  - {fileID: 1901210469}
+  - {fileID: 956631160}
+  - {fileID: 2034063155}
+  - {fileID: 4601773}
+  - {fileID: 2033438257}
+  - {fileID: 1170343084}
+  - {fileID: 19986226}
+  - {fileID: 1222224505}
+  - {fileID: 2091074006}
+  - {fileID: 617714830}
+  - {fileID: 256570887}
+  - {fileID: 1785820483}
+  - {fileID: 486245645}
+  - {fileID: 704391968}
+  - {fileID: 2033454940}
+  - {fileID: 186373445}
+  - {fileID: 234463489}
+  - {fileID: 5262598}
+  displayText: {fileID: 1106911817}
 --- !u!1 &1433706235
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,7 +5683,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1433706238}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[10].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1433706238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5638,7 +5891,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572456917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[5].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1572456917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5759,7 +6024,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1606540487}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[0].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1606540487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6021,7 +6298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.5, y: -396.5}
+  m_AnchoredPosition: {x: 404.50003, y: -396.5}
   m_SizeDelta: {x: 141, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1619273505
@@ -6067,7 +6344,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1619273506}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[14].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1619273506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6220,7 +6509,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1630171448}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[23].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1630171448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6341,7 +6642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1657105624}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[7].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1657105624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6462,7 +6775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1744549885}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[13].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1744549885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7690,7 +8015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 404.5, y: -544.5}
+  m_AnchoredPosition: {x: 404.50003, y: -544.5}
   m_SizeDelta: {x: 141, y: 141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2090354693
@@ -7736,7 +8061,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2090354694}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[20].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2090354694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7991,7 +8328,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2134654866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1410395685}
+        m_TargetAssemblyTypeName: buttonTesting, Assembly-CSharp
+        m_MethodName: firstClick
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: buttonText[11].text
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2134654866
 MonoBehaviour:
   m_ObjectHideFlags: 0
