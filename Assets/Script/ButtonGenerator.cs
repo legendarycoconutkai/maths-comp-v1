@@ -4,11 +4,13 @@ using UnityEngine;
 using static Unity.Burst.Intrinsics.X86.Avx;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class buttonGenerator : MonoBehaviour
 {
     public GameObject[] button;
     public TextMeshProUGUI[] buttonText;
+    static Boolean[] buttonState;
     string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
     public TextMeshProUGUI displayText;
@@ -23,14 +25,35 @@ public class buttonGenerator : MonoBehaviour
         for (int i = 0; i < button.Length; i++)
         {
             button[i].SetActive(true);
-            string text = operators[Random.Range(0, operators.Length)];
+            string text = operators[UnityEngine.Random.Range(0, operators.Length)];
             buttonText[i].text = text;
+            //Boolean state = true;
+            //buttonState[i] = state;
             button[i].GetComponent<Button>().onClick.RemoveAllListeners();
             button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text); });
+            
         }
     }
+
+    public void SecondClick()
+    {
+
+    }
+
     public void firstClick(string buttonValue)
     {
+        /*if(state == true)
+        {
+            currentInput += buttonValue;
+            UpdateDisplay();
+        }
+
+        else
+        {
+            currentInput = buttonValue;
+            UpdateDisplay();
+        } */
+
         currentInput += buttonValue;
         UpdateDisplay();
     }
@@ -53,5 +76,10 @@ public class buttonGenerator : MonoBehaviour
     private void UpdateDisplay()
     {
         displayText.text = currentInput;
+    }
+
+    private void ButtonListener()
+    {
+
     }
 }
