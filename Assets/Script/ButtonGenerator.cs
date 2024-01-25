@@ -5,6 +5,7 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using org.mariuszgromada.math.mxparser;
 
 public class buttonGenerator : MonoBehaviour
 {
@@ -17,31 +18,27 @@ public class buttonGenerator : MonoBehaviour
     private string currentInput = "";
     private double result = 0.0;
     public GameObject equalButton;
+    public TextMeshProUGUI equalButtonText;
+
+    public GameObject temporaryButton;
+    public GameObject temporaryButton2;
+
+    static float question;
 
     private void OnEnable()
     {
         buttonState = new bool[button.Length];
 
+        // setup equal button
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
 
-        for (int i = 0; i < button.Length; i++)
-        {
+        // setup temporary buttons
+        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
+        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { questionGeneration(); });
+        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(); });
 
-            // Activation of button
-            button[i].SetActive(true);
-            string text = operators[UnityEngine.Random.Range(0, operators.Length)];
-            buttonText[i].text = text;
-            // Boolean state = true;
-
-            // State of button is initialized to true
-            buttonState[i] = true;
-
-            int j = i;
-
-            button[i].GetComponent<Button>().onClick.RemoveAllListeners();
-            button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text, j); });
-            
-        }
+        buttonGeneration();
+        questionGeneration();
     }
 
     public void firstClick(string buttonValue, int buttonIndex)
@@ -49,23 +46,25 @@ public class buttonGenerator : MonoBehaviour
         if (buttonState[buttonIndex])
         {
             currentInput += buttonValue;
-            buttonState[buttonIndex] = false; //Set button state to false after first click
+            buttonState[buttonIndex] = false; // set button state to false after first click
+            setBlack(buttonIndex); // set button to black
             UpdateDisplay();
         }
 
         else
         {
-            for (int i = 0; i < currentInput.Length; i++) 
+            for (int i = 0; i < currentInput.Length; i++)
             {
                 if (buttonValue == currentInput.Substring(i))
                 {
-                    currentInput = currentInput.Remove(i,1);
+                    currentInput = currentInput.Remove(i, 1);
                     buttonState[buttonIndex] = true;
+                    setWhite(buttonIndex); // set button to white
                 }
-                
-            }     
-         }
-            UpdateDisplay();       
+
+            }
+        }
+        UpdateDisplay();
     }
 
     /*public void firstClick(string buttonValue, int buttonIndex)
@@ -111,11 +110,18 @@ public class buttonGenerator : MonoBehaviour
     {
         try
         {
-            result = System.Convert.ToDouble(new System.Data.DataTable().Compute(currentInput, ""));
+            Expression e = new Expression(currentInput);
+            result = e.calculate();
 
-            currentInput = result.ToString();
+            if (result == question)
+            {
+                currentInput = result.ToString();
 
-            UpdateDisplay();
+                destroyClicked();
+
+                UpdateDisplay();
+            }
+            
         }
         catch (System.Exception)
         {
@@ -127,9 +133,67 @@ public class buttonGenerator : MonoBehaviour
     {
         displayText.text = currentInput;
     }
-
     private void ButtonListener()
     {
 
+    }
+    private void setBlack(int buttonIndex)
+    {
+        button[buttonIndex].GetComponent<Image>().color = Color.black; // turn button to black
+        buttonText[buttonIndex].color = Color.white; // turn button text to white
+    }
+    private void setWhite(int buttonIndex)
+    {
+        button[buttonIndex].GetComponent<Image>().color = Color.white; // turn button to white
+        buttonText[buttonIndex].color = Color.black;// turn button text to black
+    }
+
+    private void buttonGeneration()
+    {
+        for (int i = 0; i < button.Length; i++)
+        {
+            if (!button[i].activeSelf)
+            {
+                setWhite(i);
+
+                // Activation of button
+                button[i].SetActive(true);
+
+                // Setting the text of the button
+                string text = operators[UnityEngine.Random.Range(0, operators.Length)];
+                buttonText[i].text = text;
+                // Boolean state = true;
+
+                // State of button is initialized to true
+                buttonState[i] = true;
+
+                int j = i;
+
+                button[i].GetComponent<Button>().onClick.RemoveAllListeners();
+                button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text, j); });
+            }
+        }
+    }
+    private void questionGeneration()
+    {
+        question = UnityEngine.Random.Range(0, 10);
+        equalButtonText.text = ("= " + question.ToString());       
+    }
+    private void destroyClicked()
+    {
+        for (int i = 0; i < button.Length; i++)
+        {
+            if (!buttonState[i])
+            {
+                // deactivation of button
+                button[i].SetActive(false);
+            }
+        }
+    }
+    private void ClearInput()
+    {
+        currentInput = "";
+        result = 0.0;
+        UpdateDisplay();
     }
 }
