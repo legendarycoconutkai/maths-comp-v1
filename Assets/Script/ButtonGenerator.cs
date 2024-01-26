@@ -213,7 +213,7 @@ public class buttonGenerator : MonoBehaviour
         {
             if (!buttonState[i])
             {
-                button[i].SetActive(true);
+                buttonState[i] = true;
                 setWhite(i);
                 
                 if (textPosition[i] != 0) 
