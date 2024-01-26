@@ -1,9 +1,9 @@
-/*
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
 
-public class Boss : MonoBehaviour
+public class healthbar : MonoBehaviour
 {
     public float Health, Maxhealth;
 
@@ -19,11 +19,11 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w"))
+        if (Input.GetKeyDown("d"))
         {
             SetHealth(-20f);
         }
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("h"))
         {
             SetHealth(20f);
         }
@@ -36,5 +36,5 @@ public class Boss : MonoBehaviour
 
         healthBar.SetHealth(Health);
     }
+
 }
-*/

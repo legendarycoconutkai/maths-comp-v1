@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
@@ -23,7 +23,7 @@ public class healthbar : MonoBehaviour
         {
             SetHealth(-20f);
         }
-        if (Input.GetKeyDown("h")) 
+        if (Input.GetKeyDown("h"))
         {
             SetHealth(20f);
         }
@@ -38,3 +38,4 @@ public class healthbar : MonoBehaviour
     }
 
 }
+*/
