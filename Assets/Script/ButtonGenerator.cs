@@ -37,9 +37,9 @@ public class buttonGenerator : MonoBehaviour
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
 
         // setup temporary buttons
-        /*temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
+        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
         temporaryButton.GetComponent<Button>().onClick.AddListener(() => { questionGeneration(); });
-        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(); });*/
+        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(); });
 
         //StartCoroutine (buttonGeneration());
         buttonGeneration();
