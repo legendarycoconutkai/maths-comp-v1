@@ -12,6 +12,7 @@ public class unlockpopup : MonoBehaviour
     public TextMeshProUGUI OperatorDesc;
     public Image OperatorImage;
     public Button CloseButton;
+    public GameObject unlockWindow;
 
     void Update()
     {
@@ -19,7 +20,13 @@ public class unlockpopup : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.U))
         {
             // Call the ShowPopup method with your desired information
-            ShowPopup("New Accessory Unlocked!", "Accessory Name", "Description of the accessory.", OperatorImage);
+            // ShowPopup("New Accessory Unlocked!", "Accessory Name", "Description of the accessory.", OperatorImage);
+            ShowPopupTest();
+        }
+        else if (Input.GetKeyDown(KeyCode.I))
+        {
+            // Call the ShowPopup method with your desired information
+            ClosePopup();
         }
     }
 
@@ -35,11 +42,15 @@ public class unlockpopup : MonoBehaviour
         OperatorDesc.text = description;
         OperatorImage.sprite = accessorySprite;
 
-        gameObject.SetActive(true);
+        unlockWindow.SetActive(true);
+    }
+    public void ShowPopupTest()
+    {
+        unlockWindow.SetActive(true);
     }
 
     public void ClosePopup()
     {
-        gameObject.SetActive(false);
+        unlockWindow.SetActive(false);
     }
 }
