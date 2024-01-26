@@ -208,6 +208,20 @@ public class buttonGenerator : MonoBehaviour
         currentInput = "";
         result = 0.0;
         UpdateDisplay();
+
+        for (int i = 0;i < button.Length; i++)
+        {
+            if (!buttonState[i])
+            {
+                button[i].SetActive(true);
+                setWhite(i);
+                
+                if (textPosition[i] != 0) 
+                {
+                    textPosition[i] = 0;
+                }
+            }
+        }
     }
 
     /*public void firstClick(string buttonValue, int buttonIndex)
