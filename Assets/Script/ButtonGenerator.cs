@@ -67,59 +67,11 @@ public class buttonGenerator : MonoBehaviour
 
             buttonState[buttonIndex] = true; // set button state back to true after second click
             setWhite(buttonIndex); // set button to white
-
-            /*for (int i = 0; i < currentInput.Length; i++)
-            {
-                if (buttonValue == currentInput.Substring(i))
-                {
-                    
-                }
-
-            }*/
         }
 
         UpdateDisplay();
     }
 
-    /*public void firstClick(string buttonValue, int buttonIndex)
-    {
-        // Check if buttonIndex is within the valid range
-        if (buttonIndex < 0 || buttonIndex >= buttonState.Length)
-        {
-            Debug.LogError("Invalid buttonIndex: " + buttonIndex);
-            return;
-        }
-
-        // Check if buttonState array has been initialized and has the expected length
-        if (buttonState == null || buttonState.Length != button.Length)
-        {
-            Debug.LogError("Invalid buttonState array");
-            return;
-        }
-
-        // Check if currentInput is not null
-        if (currentInput == null)
-        {
-            Debug.LogError("currentInput is null");
-            return;
-        }
-
-        if (buttonState[buttonIndex])
-        {
-            currentInput += buttonValue;
-            buttonState[buttonIndex] = false; // Set the state to false after the first click
-        }
-        else
-        {
-            // Handle removing the text (e.g., removing the last character)
-            if (currentInput.Length > 0)
-            {
-                currentInput = currentInput.Substring(0, currentInput.Length - 1);
-            }
-        }
-
-        UpdateDisplay();
-    }*/
     public void CalculateResult()
     {
         try
@@ -188,7 +140,7 @@ public class buttonGenerator : MonoBehaviour
     }
     private void questionGeneration()
     {
-        question = UnityEngine.Random.Range(0, 10);
+        question = UnityEngine.Random.Range(0, 10); // generate question [0,10]
         equalButtonText.text = ("= " + question.ToString());
     }
     private void destroyClicked()
@@ -208,4 +160,44 @@ public class buttonGenerator : MonoBehaviour
         result = 0.0;
         UpdateDisplay();
     }
+
+    /*public void firstClick(string buttonValue, int buttonIndex)
+    {
+        // Check if buttonIndex is within the valid range
+        if (buttonIndex < 0 || buttonIndex >= buttonState.Length)
+        {
+            Debug.LogError("Invalid buttonIndex: " + buttonIndex);
+            return;
+        }
+
+        // Check if buttonState array has been initialized and has the expected length
+        if (buttonState == null || buttonState.Length != button.Length)
+        {
+            Debug.LogError("Invalid buttonState array");
+            return;
+        }
+
+        // Check if currentInput is not null
+        if (currentInput == null)
+        {
+            Debug.LogError("currentInput is null");
+            return;
+        }
+
+        if (buttonState[buttonIndex])
+        {
+            currentInput += buttonValue;
+            buttonState[buttonIndex] = false; // Set the state to false after the first click
+        }
+        else
+        {
+            // Handle removing the text (e.g., removing the last character)
+            if (currentInput.Length > 0)
+            {
+                currentInput = currentInput.Substring(0, currentInput.Length - 1);
+            }
+        }
+
+        UpdateDisplay();
+    }*/
 }
