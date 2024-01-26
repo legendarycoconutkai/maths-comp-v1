@@ -183,7 +183,7 @@ MonoBehaviour:
   OperatorDesc: {fileID: 1699235748}
   OperatorImage: {fileID: 2044278381}
   CloseButton: {fileID: 1468499148}
-  unlockWindow: {fileID: 0}
+  unlockWindow: {fileID: 1158967}
 --- !u!114 &1158970
 MonoBehaviour:
   m_ObjectHideFlags: 0
