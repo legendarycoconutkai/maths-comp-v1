@@ -46,11 +46,17 @@ public class unlockpopup : MonoBehaviour
     }
     public void ShowPopupTest()
     {
-        unlockWindow.SetActive(true);
+        if (!unlockWindow.activeSelf)
+        {
+            unlockWindow.SetActive(true);
+        }
     }
 
     public void ClosePopup()
     {
-        unlockWindow.SetActive(false);
+        if (unlockWindow.activeSelf)
+        {
+            unlockWindow.SetActive(false);
+        }
     }
 }
