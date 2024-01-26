@@ -80,10 +80,15 @@ public class buttonGenerator : MonoBehaviour
             if (result == question) // only update result if answer is correct
             {
                 ClearInput();
-
                 destroyClicked();
+                equalButton.GetComponent<Image>().color = Color.green; // turns button green as feedback if correct
+                Invoke(nameof(setEqualButtonWhite), (float)0.2);
             }
-
+            else // turns button red as feedback if wrong
+            {
+                equalButton.GetComponent<Image>().color = Color.red;
+                Invoke(nameof(setEqualButtonWhite), (float)0.2);
+            }
         }
         catch (System.Exception)
         {
@@ -104,6 +109,10 @@ public class buttonGenerator : MonoBehaviour
     {
         button[buttonIndex].GetComponent<Image>().color = Color.white; // turn button to white
         buttonText[buttonIndex].color = Color.black;// turn button text to black
+    }
+    private void setEqualButtonWhite()
+    {
+        equalButton.GetComponent<Image>().color = Color.white;
     }
     private void buttonGeneration()
     {
