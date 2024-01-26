@@ -15,7 +15,9 @@ public class buttonGenerator : MonoBehaviour
     static int[] textPosition;
     string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
+    private int damageCount = 0;
     public TextMeshProUGUI displayText;
+    public TextMeshProUGUI damageText;
     private string currentInput = "";
     private double result = 0.0;
     public GameObject equalButton;
@@ -35,10 +37,11 @@ public class buttonGenerator : MonoBehaviour
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
 
         // setup temporary buttons
-        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
+        /*temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
         temporaryButton.GetComponent<Button>().onClick.AddListener(() => { questionGeneration(); });
-        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(); });
+        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(); });*/
 
+        //StartCoroutine (buttonGeneration());
         buttonGeneration();
         questionGeneration();
     }
@@ -50,6 +53,7 @@ public class buttonGenerator : MonoBehaviour
             textPosition[buttonIndex] = currentInput.Length - 1; // save the position of the text in display
             buttonState[buttonIndex] = false; // set button state to false after first click
             setBlack(buttonIndex); // set button to black
+            damageCount++;
         }
 
         else
@@ -66,6 +70,7 @@ public class buttonGenerator : MonoBehaviour
 
             buttonState[buttonIndex] = true; // set button state back to true after second click
             setWhite(buttonIndex); // set button to white
+            damageCount--;
         }
 
         UpdateDisplay();
@@ -74,15 +79,23 @@ public class buttonGenerator : MonoBehaviour
     {
         try
         {
+            
             Expression e = new Expression(currentInput);
             result = e.calculate();
 
             if (result == question) // only update result if answer is correct
             {
+                DamageCounter();
                 ClearInput();
                 destroyClicked();
                 equalButton.GetComponent<Image>().color = Color.green; // turns button green as feedback if correct
                 Invoke(nameof(setEqualButtonWhite), (float)0.2);
+
+                //Damage Calculation
+               
+                //damageText.text = damageCount.ToString();
+
+                StartCoroutine(DelayCaller());
             }
             else // turns button red as feedback if wrong
             {
@@ -95,6 +108,11 @@ public class buttonGenerator : MonoBehaviour
             currentInput = "Error";
             UpdateDisplay();
         }
+    }
+
+    private void DamageCounter()
+    {
+        damageText.text = currentInput.Length.ToString();
     }
     private void UpdateDisplay()
     {
@@ -114,8 +132,12 @@ public class buttonGenerator : MonoBehaviour
     {
         equalButton.GetComponent<Image>().color = Color.white;
     }
+
+    //        yield return new WaitForSeconds(3);
+
     private void buttonGeneration()
     {
+
         for (int i = 0; i < button.Length; i++)
         {
             if (!button[i].activeSelf)
@@ -140,10 +162,35 @@ public class buttonGenerator : MonoBehaviour
             }
         }
     }
+
+    //Delay caller for buttons
+    IEnumerator DelayCaller()
+    {
+        yield return new WaitForSeconds(3);
+        questionGeneration();
+
+        //Destroy all button to regenerate all new input
+        //destroyAllButton();
+
+        yield return new WaitForSeconds(1);
+        //Everytime new question generated the button will be regenerate
+        buttonGeneration();
+    }
+
     private void questionGeneration()
     {
         question = UnityEngine.Random.Range(0, 10); // generate question [0,10]
         equalButtonText.text = ("= " + question.ToString());
+    }
+
+    private void destroyAllButton()
+    {
+        for (int i = 0; i < button.Length; i++)
+        {
+                // deactivation of button
+                button[i].SetActive(false);
+        }
+
     }
     private void destroyClicked()
     {
