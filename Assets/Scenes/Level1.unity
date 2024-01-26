@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1158968
 RectTransform:
   m_ObjectHideFlags: 0
@@ -183,6 +183,7 @@ MonoBehaviour:
   OperatorDesc: {fileID: 1699235748}
   OperatorImage: {fileID: 2044278381}
   CloseButton: {fileID: 1468499148}
+  unlockWindow: {fileID: 0}
 --- !u!114 &1158970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5618,6 +5619,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1222224503}
   m_CullTransparentMesh: 1
+--- !u!1 &1250410722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1250410723}
+  - component: {fileID: 1250410724}
+  m_Layer: 0
+  m_Name: Listener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1250410723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250410722}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2135882188}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1250410724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250410722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9e0f958e93ab8a459032117adbfd80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UnlockTitle: {fileID: 818644245}
+  OperatorName: {fileID: 1535245179}
+  OperatorDesc: {fileID: 1699235748}
+  OperatorImage: {fileID: 2044278381}
+  CloseButton: {fileID: 1468499148}
+  unlockWindow: {fileID: 1158967}
 --- !u!1 &1339683112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5859,61 +5910,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  button:
-  - {fileID: 1606540484}
-  - {fileID: 113965912}
-  - {fileID: 813681841}
-  - {fileID: 12516035}
-  - {fileID: 451022914}
-  - {fileID: 1572456914}
-  - {fileID: 84165175}
-  - {fileID: 1657105621}
-  - {fileID: 147819947}
-  - {fileID: 504934507}
-  - {fileID: 1433706235}
-  - {fileID: 2134654863}
-  - {fileID: 1087214806}
-  - {fileID: 1744549882}
-  - {fileID: 1619273503}
-  - {fileID: 604070287}
-  - {fileID: 1173043725}
-  - {fileID: 1339683112}
-  - {fileID: 572333767}
-  - {fileID: 1164712995}
-  - {fileID: 2090354691}
-  - {fileID: 965390028}
-  - {fileID: 161583390}
-  - {fileID: 1630171445}
-  buttonText:
-  - {fileID: 286621717}
-  - {fileID: 1909813061}
-  - {fileID: 974498739}
-  - {fileID: 333076021}
-  - {fileID: 1037105207}
-  - {fileID: 349420635}
-  - {fileID: 1901210469}
-  - {fileID: 956631160}
-  - {fileID: 2034063155}
-  - {fileID: 4601773}
-  - {fileID: 2033438257}
-  - {fileID: 1170343084}
-  - {fileID: 19986226}
-  - {fileID: 1222224505}
-  - {fileID: 2091074006}
-  - {fileID: 617714830}
-  - {fileID: 256570887}
-  - {fileID: 1785820483}
-  - {fileID: 486245645}
-  - {fileID: 704391968}
-  - {fileID: 2033454940}
-  - {fileID: 186373445}
-  - {fileID: 234463489}
-  - {fileID: 5262598}
-  displayText: {fileID: 1106911817}
-  equalButton: {fileID: 894191764}
-  equalButtonText: {fileID: 1606851316}
-  temporaryButton: {fileID: 923481292}
-  temporaryButton2: {fileID: 1751363163}
 --- !u!1 &1433706235
 GameObject:
   m_ObjectHideFlags: 0
@@ -9534,7 +9530,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1250410723}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
