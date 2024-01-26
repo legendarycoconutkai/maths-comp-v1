@@ -42,7 +42,6 @@ public class buttonGenerator : MonoBehaviour
         buttonGeneration();
         questionGeneration();
     }
-
     public void buttonClick(string buttonValue, int buttonIndex)
     {
         if (buttonState[buttonIndex])
@@ -71,7 +70,6 @@ public class buttonGenerator : MonoBehaviour
 
         UpdateDisplay();
     }
-
     public void CalculateResult()
     {
         try
@@ -79,7 +77,7 @@ public class buttonGenerator : MonoBehaviour
             Expression e = new Expression(currentInput);
             result = e.calculate();
 
-            if (result == question) // only update result
+            if (result == question) // only update result if answer is correct
             {
                 ClearInput();
 
@@ -97,10 +95,6 @@ public class buttonGenerator : MonoBehaviour
     {
         displayText.text = currentInput;
     }
-    private void ButtonListener()
-    {
-
-    }
     private void setBlack(int buttonIndex)
     {
         button[buttonIndex].GetComponent<Image>().color = Color.black; // turn button to black
@@ -111,7 +105,6 @@ public class buttonGenerator : MonoBehaviour
         button[buttonIndex].GetComponent<Image>().color = Color.white; // turn button to white
         buttonText[buttonIndex].color = Color.black;// turn button text to black
     }
-
     private void buttonGeneration()
     {
         for (int i = 0; i < button.Length; i++)
