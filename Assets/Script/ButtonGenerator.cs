@@ -12,6 +12,7 @@ public class buttonGenerator : MonoBehaviour
     public GameObject[] button;
     public TextMeshProUGUI[] buttonText;
     static bool[] buttonState;
+    static int[] textPosition;
     string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
     public TextMeshProUGUI displayText;
@@ -28,6 +29,7 @@ public class buttonGenerator : MonoBehaviour
     private void OnEnable()
     {
         buttonState = new bool[button.Length];
+        textPosition = new int[button.Length];
 
         // setup equal button
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
@@ -41,29 +43,41 @@ public class buttonGenerator : MonoBehaviour
         questionGeneration();
     }
 
-    public void firstClick(string buttonValue, int buttonIndex)
+    public void buttonClick(string buttonValue, int buttonIndex)
     {
         if (buttonState[buttonIndex])
         {
-            currentInput += buttonValue;
+            currentInput += buttonValue; // add button text to display
+            textPosition[buttonIndex] = currentInput.Length - 1; // save the position of the text in display
             buttonState[buttonIndex] = false; // set button state to false after first click
             setBlack(buttonIndex); // set button to black
-            UpdateDisplay();
         }
 
         else
         {
-            for (int i = 0; i < currentInput.Length; i++)
+            currentInput = currentInput.Remove(textPosition[buttonIndex], 1); // remove button text from display
+
+            for (int i = 0; i < textPosition.Length; i++) // minus 1 from the position of text in front of removed text
+            {
+                if (textPosition[i] > textPosition[buttonIndex])
+                {
+                    textPosition[i] = textPosition[i] - 1;
+                }
+            }
+
+            buttonState[buttonIndex] = true; // set button state back to true after second click
+            setWhite(buttonIndex); // set button to white
+
+            /*for (int i = 0; i < currentInput.Length; i++)
             {
                 if (buttonValue == currentInput.Substring(i))
                 {
-                    currentInput = currentInput.Remove(i, 1);
-                    buttonState[buttonIndex] = true;
-                    setWhite(buttonIndex); // set button to white
+                    
                 }
 
-            }
+            }*/
         }
+
         UpdateDisplay();
     }
 
@@ -113,15 +127,13 @@ public class buttonGenerator : MonoBehaviour
             Expression e = new Expression(currentInput);
             result = e.calculate();
 
-            if (result == question)
+            if (result == question) // only update result
             {
-                currentInput = result.ToString();
+                ClearInput();
 
                 destroyClicked();
-
-                UpdateDisplay();
             }
-            
+
         }
         catch (System.Exception)
         {
@@ -170,14 +182,14 @@ public class buttonGenerator : MonoBehaviour
                 int j = i;
 
                 button[i].GetComponent<Button>().onClick.RemoveAllListeners();
-                button[i].GetComponent<Button>().onClick.AddListener(delegate { firstClick(text, j); });
+                button[i].GetComponent<Button>().onClick.AddListener(delegate { buttonClick(text, j); });
             }
         }
     }
     private void questionGeneration()
     {
         question = UnityEngine.Random.Range(0, 10);
-        equalButtonText.text = ("= " + question.ToString());       
+        equalButtonText.text = ("= " + question.ToString());
     }
     private void destroyClicked()
     {
