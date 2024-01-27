@@ -8490,7 +8490,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1511364074}
   - component: {fileID: 1511364077}
-  - component: {fileID: 1511364076}
   - component: {fileID: 1511364075}
   m_Layer: 0
   m_Name: Boss2
@@ -8508,7 +8507,7 @@ Transform:
   m_GameObject: {fileID: 1511364073}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.21, y: 3.02, z: 0}
+  m_LocalPosition: {x: 10.97, y: 3.02, z: 0}
   m_LocalScale: {x: 0.3353328, y: 0.3353328, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8528,21 +8527,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 2
   scrollDistance: 6
---- !u!114 &1511364076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1511364073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a160f66e7d3bc24d943b5d7e7eed176, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Health: 50
-  Maxhealth: 80
-  healthBar: {fileID: 958076664}
 --- !u!212 &1511364077
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11496,7 +11480,6 @@ GameObject:
   - component: {fileID: 2064423513}
   - component: {fileID: 2064423514}
   - component: {fileID: 2064423515}
-  - component: {fileID: 2064423516}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -11586,18 +11569,6 @@ MonoBehaviour:
   Health: 50
   Maxhealth: 80
   healthBar: {fileID: 958076664}
---- !u!114 &2064423516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064423512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14744632a017c1b4cad7ae6594ecbed3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2073547940
 GameObject:
   m_ObjectHideFlags: 0

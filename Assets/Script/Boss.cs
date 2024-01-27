@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Boss : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Boss : MonoBehaviour
 
     [SerializeField]
     private HBSetting healthBar;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +29,11 @@ public class Boss : MonoBehaviour
         {
             SetHealth(20f);
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SetHealth(-Health); // Set health to 0, effectively killing the boss
+        }
     }
 
     public void SetHealth(float healthChange)
@@ -34,6 +42,13 @@ public class Boss : MonoBehaviour
         Health = Mathf.Clamp(Health, 0, Maxhealth);
 
         healthBar.SetHealth(Health);
+
+        if (Health <= 0)
+        {
+            
+            gameObject.SetActive(false);
+            
+        }
     }
 }
 

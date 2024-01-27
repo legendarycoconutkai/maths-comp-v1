@@ -13,6 +13,8 @@ public class BackgroundScroll : MonoBehaviour
         {
             StartCoroutine(ScrollBackground());
         }
+
+        
     }
 
     IEnumerator ScrollBackground()
@@ -25,5 +27,7 @@ public class BackgroundScroll : MonoBehaviour
             distanceScrolled += scrollSpeed * Time.deltaTime;
             yield return null;
         }
+
+        
     }
 }
