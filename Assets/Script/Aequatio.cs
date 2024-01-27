@@ -7,6 +7,7 @@ using UnityEngine.Events;
 
 public class Aequatio : MonoBehaviour
 {
+    //public DefeatPopup defeatPopUp;
     public float Health, Maxhealth;
 
     [SerializeField]
@@ -42,6 +43,7 @@ public class Aequatio : MonoBehaviour
         {
 
             gameObject.SetActive(false);
+            //defeatPopUp.StartCoroutine(defeatPopUp.defeatPop());
             
             /*
              * Code prompt fail quest

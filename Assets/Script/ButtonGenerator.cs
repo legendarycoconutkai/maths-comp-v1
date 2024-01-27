@@ -15,6 +15,8 @@ public class buttonGenerator : MonoBehaviour
     public Boss2 boss2;
     public Boss3 boss3;
     public Aequatio aequatio;
+    public GameObject victoryPopUp;
+    public GameObject defeatPopUp;
     private static Boolean isFirstTime1 = true;
     private static Boolean isFirstTime2 = true;
 
@@ -101,6 +103,12 @@ public class buttonGenerator : MonoBehaviour
             if((turnCount%4) == 0)
             {
                 aequatio.SetHealth(-1);
+
+                if(aequatio.Health == 0)
+                {
+                    StartCoroutine(defeatPop());
+                    Debug.Log("Die");
+                }
             }
 
             if (result == question) // only update result if answer is correct
@@ -128,6 +136,11 @@ public class buttonGenerator : MonoBehaviour
                 {   
                     boss3.SetHealth(-damageCount);
                     UpdateTurn();
+                    
+                    if(boss3.Health == 0)
+                    {
+                        StartCoroutine(victoryPop());
+                    }
                 }
 
                 if ((!boss1.activeSelf() && isFirstTime1) || (!boss2.activeSelf() && isFirstTime2))
@@ -163,7 +176,6 @@ public class buttonGenerator : MonoBehaviour
             UpdateDisplay();
         }
     }
-
     IEnumerator DamageCounter()
     {
         damageText.text = $"{currentInput.Length.ToString()} DAMAGE DEALT!!!";
@@ -225,7 +237,6 @@ public class buttonGenerator : MonoBehaviour
             }
         }
     }
-
     //Delay caller for buttons
     IEnumerator DelayCaller()
     {
@@ -297,5 +308,21 @@ public class buttonGenerator : MonoBehaviour
         {
 
         }
+    }
+    IEnumerator defeatPop()
+    {
+        defeatPopUp.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        defeatPopUp.SetActive(false);
+    }
+    IEnumerator victoryPop()
+    {
+        victoryPopUp.SetActive(true);
+
+        yield return new WaitForSeconds(3);
+
+        victoryPopUp.SetActive(false);
     }
 }

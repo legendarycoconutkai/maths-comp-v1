@@ -7,6 +7,7 @@ public class Boss3 : MonoBehaviour
 {
     //public Boss2Controller controller;
     public float Health, Maxhealth;
+    //public VictoryPopup victoryPopUp;
 
     [SerializeField]
     private HBSetting healthBar;
@@ -37,7 +38,7 @@ public class Boss3 : MonoBehaviour
 
             gameObject.SetActive(false);
             //controller.StartCoroutine(controller.Boss2Move());
-
+            //victoryPopUp.StartCoroutine(victoryPopUp.defeatPop());
         }
 
     }

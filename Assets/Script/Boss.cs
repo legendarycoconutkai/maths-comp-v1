@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class Boss : MonoBehaviour
 {
+
     public BossController controller;
     public float Health, Maxhealth;
 
