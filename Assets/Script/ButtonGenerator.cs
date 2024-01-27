@@ -10,13 +10,16 @@ using Unity.VisualScripting;
 
 public class buttonGenerator : MonoBehaviour
 {
+
+    public Boss boss;
+    public int damageCount = 0;
+
     public GameObject[] button;
     public TextMeshProUGUI[] buttonText;
     static bool[] buttonState;
     static int[] textPosition;
     string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
-    public int damageCount = 0;
     public TextMeshProUGUI displayText;
     public TextMeshProUGUI damageText;
     private string currentInput = "";
@@ -93,8 +96,7 @@ public class buttonGenerator : MonoBehaviour
                 Invoke(nameof(setEqualButtonWhite), (float)0.2);
 
                 //Damage Calculation
-
-                Debug.Log(damageCount.ToString());
+                boss.SetHealth(-damageCount); //-------------------New Method to be done-----------------------------
                 StartCoroutine(DelayCaller());
             }
             else // turns button red as feedback if wrong
