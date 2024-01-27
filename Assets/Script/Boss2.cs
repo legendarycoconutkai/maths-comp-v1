@@ -1,17 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Boss : MonoBehaviour
+public class Boss2 : MonoBehaviour
 {
-    public Boss2Controller controller;
+    //public Boss2Controller controller;
     public float Health, Maxhealth;
 
     [SerializeField]
     private HBSetting healthBar;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +21,7 @@ public class Boss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("w"))
-        {
-            SetHealth(-20f);
-        }
-        if (Input.GetKeyDown("s"))
-        {
-            SetHealth(20f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SetHealth(-Health); // Set health to 0, effectively killing the boss
-        }
+        healthBar.SetMaxHealth(Maxhealth);
     }
 
     public void SetHealth(float healthChange)
@@ -48,12 +35,9 @@ public class Boss : MonoBehaviour
         {
 
             gameObject.SetActive(false);
-            controller.StartCoroutine(controller.Boss2Move());
-
-            healthBar.SetHealth(Maxhealth);
+            //controller.StartCoroutine(controller.Boss2Move());
 
         }
-        
+
     }
 }
-

@@ -15,7 +15,7 @@ public class Boss2Controller : MonoBehaviour
         }
     }
 
-    IEnumerator Boss2Move()
+    public IEnumerator Boss2Move()
     {
         float distanceScrolled = 0f;
 

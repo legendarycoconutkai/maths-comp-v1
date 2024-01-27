@@ -8095,6 +8095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boss: {fileID: 2064423515}
+  damageCount: 0
   button:
   - {fileID: 1606540484}
   - {fileID: 113965912}
@@ -8491,6 +8493,7 @@ GameObject:
   - component: {fileID: 1511364074}
   - component: {fileID: 1511364077}
   - component: {fileID: 1511364075}
+  - component: {fileID: 1511364078}
   m_Layer: 0
   m_Name: Boss2
   m_TagString: Untagged
@@ -8579,6 +8582,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1511364078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1511364073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2220bfcfd38ac34e9779d615095501d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 5
+  Maxhealth: 5
+  healthBar: {fileID: 958076664}
 --- !u!1 &1513138882
 GameObject:
   m_ObjectHideFlags: 0
@@ -11566,8 +11584,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a160f66e7d3bc24d943b5d7e7eed176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
-  Maxhealth: 80
+  controller: {fileID: 1511364075}
+  Health: 5
+  Maxhealth: 5
   healthBar: {fileID: 958076664}
 --- !u!1 &2073547940
 GameObject:
