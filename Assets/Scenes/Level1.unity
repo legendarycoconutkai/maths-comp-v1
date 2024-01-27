@@ -6899,7 +6899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 330.67, y: -87.17001}
+  m_AnchoredPosition: {x: 330.66998, y: -87.17001}
   m_SizeDelta: {x: 569.51, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1106911816
@@ -8095,6 +8095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bossScript: {fileID: 2064423515}
   button:
   - {fileID: 1606540484}
   - {fileID: 113965912}
@@ -8145,6 +8146,7 @@ MonoBehaviour:
   - {fileID: 186373445}
   - {fileID: 234463489}
   - {fileID: 5262598}
+  damageCount: 0
   displayText: {fileID: 1106911817}
   damageText: {fileID: 914670244}
   equalButton: {fileID: 894191764}
@@ -11480,6 +11482,11 @@ GameObject:
   - component: {fileID: 2064423513}
   - component: {fileID: 2064423514}
   - component: {fileID: 2064423515}
+<<<<<<< Updated upstream
+=======
+  - component: {fileID: 2064423516}
+  - component: {fileID: 2064423517}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -11566,9 +11573,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a160f66e7d3bc24d943b5d7e7eed176, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
-  Maxhealth: 80
+  Health: 20
+  Maxhealth: 20
   healthBar: {fileID: 958076664}
+<<<<<<< Updated upstream
+=======
+--- !u!114 &2064423516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064423512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14744632a017c1b4cad7ae6594ecbed3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2064423517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064423512}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossScript: {fileID: 2064423515}
+  button: []
+  buttonText: []
+  damageCount: 0
+  displayText: {fileID: 0}
+  damageText: {fileID: 0}
+  equalButton: {fileID: 0}
+  equalButtonText: {fileID: 0}
+  temporaryButton: {fileID: 0}
+  temporaryButton2: {fileID: 0}
+>>>>>>> Stashed changes
 --- !u!1 &2073547940
 GameObject:
   m_ObjectHideFlags: 0
