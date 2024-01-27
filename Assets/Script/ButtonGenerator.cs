@@ -27,6 +27,7 @@ public class buttonGenerator : MonoBehaviour
 
     public TextMeshProUGUI displayText;
     public TextMeshProUGUI damageText;
+    public TextMeshProUGUI turnText;
     private string currentInput = "";
     private double result = 0.0;
     public GameObject equalButton;
@@ -53,6 +54,9 @@ public class buttonGenerator : MonoBehaviour
         //StartCoroutine (buttonGeneration());
         buttonGeneration();
         questionGeneration();
+
+        //Turn update on start
+        UpdateTurn();
     }
     public void buttonClick(string buttonValue, int buttonIndex)
     {
@@ -92,6 +96,7 @@ public class buttonGenerator : MonoBehaviour
             Expression e = new Expression(currentInput);
             result = e.calculate();
             turnCount++;
+            
             if((turnCount%4) == 0)
             {
                 aequatio.SetHealth(-1);
@@ -109,17 +114,23 @@ public class buttonGenerator : MonoBehaviour
                 if (boss1.activeSelf())
                 {
                     boss1.SetHealth(-damageCount);
+                    Debug.Log(1);
+                    UpdateTurn();
                 }
 
                 else if (boss2.activeSelf()){
                     turnCount = 1;
                     boss2.SetHealth(-damageCount);
+                    Debug.Log(2);
+                    UpdateTurn();
                 }
 
                 else if (boss3.activeSelf())
                 {   
                     turnCount = 1;
                     boss3.SetHealth(-damageCount);
+                    Debug.Log(3);
+                    UpdateTurn();
                 }
                 //-------------------New Method to be done-----------------------------
 
@@ -129,6 +140,8 @@ public class buttonGenerator : MonoBehaviour
             {
                 equalButton.GetComponent<Image>().color = Color.red;
                 Invoke(nameof(setEqualButtonWhite), (float)0.2);
+                Debug.Log(4);
+                UpdateTurn();
             }
         }
         catch (System.Exception)
@@ -149,7 +162,7 @@ public class buttonGenerator : MonoBehaviour
 
     private void UpdateTurn()
     {
-
+        turnText.text = $"TURN {turnCount.ToString()}";
     }
     private void UpdateDisplay()
     {
@@ -272,44 +285,4 @@ public class buttonGenerator : MonoBehaviour
 
         }
     }
-
-    /*public void firstClick(string buttonValue, int buttonIndex)
-    {
-        // Check if buttonIndex is within the valid range
-        if (buttonIndex < 0 || buttonIndex >= buttonState.Length)
-        {
-            Debug.LogError("Invalid buttonIndex: " + buttonIndex);
-            return;
-        }
-
-        // Check if buttonState array has been initialized and has the expected length
-        if (buttonState == null || buttonState.Length != button.Length)
-        {
-            Debug.LogError("Invalid buttonState array");
-            return;
-        }
-
-        // Check if currentInput is not null
-        if (currentInput == null)
-        {
-            Debug.LogError("currentInput is null");
-            return;
-        }
-
-        if (buttonState[buttonIndex])
-        {
-            currentInput += buttonValue;
-            buttonState[buttonIndex] = false; // Set the state to false after the first click
-        }
-        else
-        {
-            // Handle removing the text (e.g., removing the last character)
-            if (currentInput.Length > 0)
-            {
-                currentInput = currentInput.Substring(0, currentInput.Length - 1);
-            }
-        }
-
-        UpdateDisplay();
-    }*/
-    }
+}
