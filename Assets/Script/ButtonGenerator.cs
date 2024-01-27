@@ -7,6 +7,7 @@ using TMPro;
 using System;
 using org.mariuszgromada.math.mxparser;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class buttonGenerator : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class buttonGenerator : MonoBehaviour
     public Boss3 boss3;
     public Aequatio aequatio;
     public GameObject victoryPopUp;
+    public GameObject nextButton;
     public GameObject defeatPopUp;
     public GameObject unlockPopUp;
     public HBSetting healthBar;
@@ -29,7 +31,7 @@ public class buttonGenerator : MonoBehaviour
     public TextMeshProUGUI[] buttonText;
     static bool[] buttonState;
     static int[] textPosition;
-    string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "\u00d7", "\u00f7", "^" };
+    List<string> operators = new List<string> { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "\u00d7", "\u00f7", "^" };
 
     public TextMeshProUGUI displayText;
     public TextMeshProUGUI damageText;
@@ -46,8 +48,15 @@ public class buttonGenerator : MonoBehaviour
 
     static bool regenerateIsUse = true;
 
+    public GameObject UI;
+
     private void OnEnable()
     {
+        if (UI.name == "UI2")
+        {
+            operators.Add("!");
+        }
+
         buttonState = new bool[button.Length];
         textPosition = new int[button.Length];
 
@@ -248,7 +257,7 @@ public class buttonGenerator : MonoBehaviour
                 button[i].SetActive(true);
 
                 // Setting the text of the button
-                string text = operators[UnityEngine.Random.Range(0, operators.Length)];
+                string text = operators[UnityEngine.Random.Range(0, operators.Count)];
                 buttonText[i].text = text;
                 // Boolean state = true;
 
@@ -278,7 +287,7 @@ public class buttonGenerator : MonoBehaviour
                 }
 
                 // Setting the text of the button
-                string text = operators[UnityEngine.Random.Range(0, operators.Length)];
+                string text = operators[UnityEngine.Random.Range(0, operators.Count)];
                 buttonText[i].text = text;
                 // Boolean state = true;
 
@@ -292,7 +301,7 @@ public class buttonGenerator : MonoBehaviour
 
                 regenerateIsUse = false;
 
-                //temporaryButton.GetComponent<Image>().color = Color.grey;
+                temporaryButton.GetComponent<Image>().color = Color.black;
                 temporaryButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
             }
         }
@@ -367,10 +376,10 @@ public class buttonGenerator : MonoBehaviour
 
         }
     }
-
     public void unlockPop()
     {
         unlockPopUp.SetActive(true);
+        nextButton.SetActive(true);
     }
     IEnumerator defeatPop()
     {
