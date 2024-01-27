@@ -46,13 +46,15 @@ public class Boss : MonoBehaviour
 
         healthBar.SetHealth(Health);
 
-        if (Health <= 0)
+        if (Health == 0)
         {
 
             gameObject.SetActive(false);
             controller.StartCoroutine(controller.BossMove());
 
-            healthBar.SetHealth(Maxhealth);
+            Debug.Log(1.1);
+            //healthBar.SetHealth(Maxhealth);
+            Debug.Log(1.2);
 
         }
         

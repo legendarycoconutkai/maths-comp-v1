@@ -17,6 +17,7 @@ public class buttonGenerator : MonoBehaviour
     public Aequatio aequatio;
     public GameObject victoryPopUp;
     public GameObject defeatPopUp;
+    public HBSetting healthBar;
     private static Boolean isFirstTime1 = true;
     private static Boolean isFirstTime2 = true;
 
@@ -124,12 +125,20 @@ public class buttonGenerator : MonoBehaviour
                 {
                     boss1.SetHealth(-damageCount);
                     UpdateTurn();
+                    if(boss1.Health == 0)
+                    {
+                        StartCoroutine(ResetHealthBar2(boss2));
+                    }
                 }
 
                 else if (boss2.activeSelf())
                 {
                     boss2.SetHealth(-damageCount);
                     UpdateTurn();
+                    if (boss2.Health == 0)
+                    {
+                        StartCoroutine(ResetHealthBar3(boss3));
+                    }
                 }
 
                 else if (boss3.activeSelf())
@@ -176,11 +185,24 @@ public class buttonGenerator : MonoBehaviour
             UpdateDisplay();
         }
     }
+
+    IEnumerator ResetHealthBar2(Boss2 boss2)
+    {
+        yield return new WaitForSeconds(3);
+        healthBar.SetHealth(boss2.Maxhealth);
+    }
+    IEnumerator ResetHealthBar3(Boss3 boss3)
+    {
+        yield return new WaitForSeconds(3);
+        healthBar.SetHealth(boss3.Maxhealth);
+    }
+
+
     IEnumerator DamageCounter()
     {
         damageText.text = $"{currentInput.Length.ToString()} DAMAGE DEALT!!!";
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
 
         damageText.text = "";
     }
@@ -240,7 +262,7 @@ public class buttonGenerator : MonoBehaviour
     //Delay caller for buttons
     IEnumerator DelayCaller()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         questionGeneration();
 
         //Destroy all button to regenerate all new input
@@ -249,8 +271,6 @@ public class buttonGenerator : MonoBehaviour
         /* Everytime new question generated the button will be regenerate
          * Carry out after 1 second delay
          */
-        yield return new WaitForSeconds(1);
-        
         buttonGeneration();
         damageCount = 0; //initialize damage counter
     }
@@ -312,17 +332,21 @@ public class buttonGenerator : MonoBehaviour
     IEnumerator defeatPop()
     {
         defeatPopUp.SetActive(true);
-
+        yield return null;  
+        /*
         yield return new WaitForSeconds(3);
 
         defeatPopUp.SetActive(false);
+        */
     }
     IEnumerator victoryPop()
     {
         victoryPopUp.SetActive(true);
-
+        yield return null;
+        /*
         yield return new WaitForSeconds(3);
 
         victoryPopUp.SetActive(false);
+        */
     }
 }

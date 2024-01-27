@@ -2056,10 +2056,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 145778011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 115.78}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 196.43, y: -330.65002}
+  m_SizeDelta: {x: 392.86, y: 115.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &281315544
 MonoBehaviour:
@@ -2340,7 +2340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 1
-  Maxhealth: 1
+  Maxhealth: 30
   healthBar: {fileID: 958076664}
 --- !u!114 &331483212
 MonoBehaviour:
@@ -2832,10 +2832,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 145778011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 91.19}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 196.43, y: -484.135}
+  m_SizeDelta: {x: 392.86, y: 91.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &377921562
 MonoBehaviour:
@@ -3810,10 +3810,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 145778011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 110.62}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 196.43, y: -635.04}
+  m_SizeDelta: {x: 392.86, y: 110.62}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529386281
 MonoBehaviour:
@@ -4455,10 +4455,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 145778011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 90.16}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 196.43, y: -61.080017}
+  m_SizeDelta: {x: 392.86, y: 90.16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &731219538
 MonoBehaviour:
@@ -4969,7 +4969,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4979,8 +4979,8 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 84937fe0d9a1e5b46808f4b8c16b959f, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 69df9fece13516c49b98835e6489599f, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -5026,7 +5026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1209810935, guid: bce85f205c5e92e4488c59702be07d6c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ff63a1fb10f70b54d8054fd9c3b2b73d, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5110,8 +5110,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -8210,6 +8210,7 @@ MonoBehaviour:
   aequatio: {fileID: 231716854}
   victoryPopUp: {fileID: 1723488079}
   defeatPopUp: {fileID: 1120228402}
+  healthBar: {fileID: 958076664}
   turnCount: 1
   damageCount: 0
   button:
@@ -8724,7 +8725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 331483212}
   Health: 1
-  Maxhealth: 1
+  Maxhealth: 25
   healthBar: {fileID: 958076664}
 --- !u!1 &1513138882
 GameObject:
@@ -8758,10 +8759,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 145778011}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 66.6}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 196.43, y: -189.46}
+  m_SizeDelta: {x: 392.86, y: 66.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1513138884
 MonoBehaviour:
@@ -11932,7 +11933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1511364075}
   Health: 1
-  Maxhealth: 1
+  Maxhealth: 20
   healthBar: {fileID: 958076664}
 --- !u!1 &2090354691
 GameObject:

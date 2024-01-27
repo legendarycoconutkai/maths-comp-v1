@@ -38,8 +38,9 @@ public class Boss2 : MonoBehaviour
             gameObject.SetActive(false);
             controller.StartCoroutine(controller.BossMove());
 
-            healthBar.SetHealth(Maxhealth);
-
+            Debug.Log(2.1);
+            //healthBar.SetHealth(Maxhealth);
+            Debug.Log(2.2);
         }
 
     }
