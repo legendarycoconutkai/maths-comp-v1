@@ -44,6 +44,8 @@ public class buttonGenerator : MonoBehaviour
 
     static float question;
 
+    static bool regenerateIsUse = true;
+
     private void OnEnable()
     {
         buttonState = new bool[button.Length];
@@ -53,8 +55,7 @@ public class buttonGenerator : MonoBehaviour
         equalButton.GetComponent<Button>().onClick.AddListener(() => { CalculateResult(); });
 
         // setup temporary buttons
-        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
-        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { questionGeneration(); });
+        temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonRegeneration(); });
         temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(true); });
 
         //StartCoroutine (buttonGeneration());
@@ -258,6 +259,41 @@ public class buttonGenerator : MonoBehaviour
 
                 button[i].GetComponent<Button>().onClick.RemoveAllListeners();
                 button[i].GetComponent<Button>().onClick.AddListener(delegate { buttonClick(text, j); });
+            }
+        }
+    }
+    private void buttonRegeneration()
+    {
+
+        if (regenerateIsUse)
+        {
+            for (int i = 0; i < button.Length; i++)
+            {
+                setWhite(i);
+
+                if (!button[i].activeSelf)
+                {
+                    // Activation of button
+                    button[i].SetActive(true);
+                }
+
+                // Setting the text of the button
+                string text = operators[UnityEngine.Random.Range(0, operators.Length)];
+                buttonText[i].text = text;
+                // Boolean state = true;
+
+                // State of button is initialized to true
+                buttonState[i] = true;
+
+                int j = i;
+
+                button[i].GetComponent<Button>().onClick.RemoveAllListeners();
+                button[i].GetComponent<Button>().onClick.AddListener(delegate { buttonClick(text, j); });
+
+                regenerateIsUse = false;
+
+                //temporaryButton.GetComponent<Image>().color = Color.grey;
+                temporaryButton.GetComponentInChildren<TextMeshProUGUI>().color = Color.white;
             }
         }
     }
