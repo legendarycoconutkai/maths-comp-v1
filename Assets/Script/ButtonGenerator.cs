@@ -95,7 +95,6 @@ public class buttonGenerator : MonoBehaviour
             
             Expression e = new Expression(currentInput);
             result = e.calculate();
-            turnCount++;
             
             if((turnCount%4) == 0)
             {
@@ -163,6 +162,7 @@ public class buttonGenerator : MonoBehaviour
     private void UpdateTurn()
     {
         turnText.text = $"TURN {turnCount.ToString()}";
+        turnCount++;
     }
     private void UpdateDisplay()
     {
