@@ -5843,14 +5843,13 @@ GameObject:
   - component: {fileID: 905089920}
   - component: {fileID: 905089923}
   - component: {fileID: 905089922}
-  - component: {fileID: 905089921}
   m_Layer: 5
   m_Name: VictoryPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &905089920
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5870,19 +5869,6 @@ RectTransform:
   m_AnchoredPosition: {x: -12, y: 315.07004}
   m_SizeDelta: {x: 659.92, y: 239.58}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &905089921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 905089919}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc0049ed9c653a9469e54df272f704bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  victoryPopup: {fileID: 905089919}
 --- !u!114 &905089922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8017,6 +8003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250410723}
   - component: {fileID: 1250410724}
+  - component: {fileID: 1250410725}
   m_Layer: 0
   m_Name: Listener
   m_TagString: Untagged
@@ -8057,6 +8044,19 @@ MonoBehaviour:
   OperatorImage: {fileID: 2044278381}
   CloseButton: {fileID: 1468499148}
   unlockWindow: {fileID: 1158967}
+--- !u!114 &1250410725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1250410722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0049ed9c653a9469e54df272f704bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  victoryPopup: {fileID: 905089919}
 --- !u!1 &1310882685
 GameObject:
   m_ObjectHideFlags: 0
@@ -8379,7 +8379,7 @@ MonoBehaviour:
   boss1: {fileID: 2064423515}
   boss2: {fileID: 1511364078}
   boss3: {fileID: 331483211}
-  aequatio: {fileID: 231716854}
+  aequatio: {fileID: 0}
   turnCount: 1
   damageCount: 0
   button:

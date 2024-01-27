@@ -6,10 +6,7 @@ public class VictoryPopup : MonoBehaviour
 {
     public GameObject victoryPopup;
 
-    void Start()
-    {
-        victoryPopup.SetActive(false);
-    }
+    
 
     // Update is called once per frame
     void Update()
