@@ -17,6 +17,7 @@ public class buttonGenerator : MonoBehaviour
     public Aequatio aequatio;
     public GameObject victoryPopUp;
     public GameObject defeatPopUp;
+    public GameObject unlockPopUp;
     public HBSetting healthBar;
     private static Boolean isFirstTime1 = true;
     private static Boolean isFirstTime2 = true;
@@ -149,6 +150,7 @@ public class buttonGenerator : MonoBehaviour
                     if(boss3.Health == 0)
                     {
                         StartCoroutine(victoryPop());
+                        Invoke(nameof(unlockPop), (float)1.5);
                     }
                 }
 
@@ -328,6 +330,11 @@ public class buttonGenerator : MonoBehaviour
         {
 
         }
+    }
+
+    public void unlockPop()
+    {
+        unlockPopUp.SetActive(true);
     }
     IEnumerator defeatPop()
     {
