@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 using org.mariuszgromada.math.mxparser;
+using Unity.VisualScripting;
 
 public class buttonGenerator : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class buttonGenerator : MonoBehaviour
     static int[] textPosition;
     string[] operators = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "+", "-", "*", "/", "^" };
 
-    private int damageCount = 0;
+    public int damageCount = 0;
     public TextMeshProUGUI displayText;
     public TextMeshProUGUI damageText;
     private string currentInput = "";
@@ -39,7 +40,7 @@ public class buttonGenerator : MonoBehaviour
         // setup temporary buttons
         temporaryButton.GetComponent<Button>().onClick.AddListener(() => { buttonGeneration(); });
         temporaryButton.GetComponent<Button>().onClick.AddListener(() => { questionGeneration(); });
-        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(); });
+        temporaryButton2.GetComponent<Button>().onClick.AddListener(() => { ClearInput(true); });
 
         //StartCoroutine (buttonGeneration());
         buttonGeneration();
@@ -85,16 +86,15 @@ public class buttonGenerator : MonoBehaviour
 
             if (result == question) // only update result if answer is correct
             {
-                DamageCounter();
-                ClearInput();
+                StartCoroutine(DamageCounter());
+                ClearInput(false);
                 destroyClicked();
                 equalButton.GetComponent<Image>().color = Color.green; // turns button green as feedback if correct
                 Invoke(nameof(setEqualButtonWhite), (float)0.2);
 
                 //Damage Calculation
-               
-                //damageText.text = damageCount.ToString();
 
+                Debug.Log(damageCount.ToString());
                 StartCoroutine(DelayCaller());
             }
             else // turns button red as feedback if wrong
@@ -110,9 +110,13 @@ public class buttonGenerator : MonoBehaviour
         }
     }
 
-    private void DamageCounter()
+    IEnumerator DamageCounter()
     {
-        damageText.text = currentInput.Length.ToString();
+        damageText.text = $"{currentInput.Length.ToString()} DAMAGE DEALT!!!";
+
+        yield return new WaitForSeconds(3);
+
+        damageText.text = "";
     }
     private void UpdateDisplay()
     {
@@ -172,9 +176,13 @@ public class buttonGenerator : MonoBehaviour
         //Destroy all button to regenerate all new input
         //destroyAllButton();
 
+        /* Everytime new question generated the button will be regenerate
+         * Carry out after 1 second delay
+         */
         yield return new WaitForSeconds(1);
-        //Everytime new question generated the button will be regenerate
+        
         buttonGeneration();
+        damageCount = 0; //initialize damage counter
     }
 
     private void questionGeneration()
@@ -203,24 +211,32 @@ public class buttonGenerator : MonoBehaviour
             }
         }
     }
-    private void ClearInput()
+    private void ClearInput(Boolean isButton)
     {
         currentInput = "";
         result = 0.0;
         UpdateDisplay();
 
-        for (int i = 0;i < button.Length; i++)
+        if (isButton) 
         {
-            if (!buttonState[i])
+            for (int i = 0; i < button.Length; i++)
             {
-                buttonState[i] = true;
-                setWhite(i);
-                
-                if (textPosition[i] != 0) 
+                if (!buttonState[i])
                 {
-                    textPosition[i] = 0;
+                    buttonState[i] = true;
+                    setWhite(i);
+
+                    if (textPosition[i] != 0)
+                    {
+                        textPosition[i] = 0;
+                    }
                 }
             }
+        }
+
+        else
+        {
+
         }
     }
 
@@ -263,4 +279,4 @@ public class buttonGenerator : MonoBehaviour
 
         UpdateDisplay();
     }*/
-}
+    }
