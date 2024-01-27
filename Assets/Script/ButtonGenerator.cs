@@ -14,7 +14,9 @@ public class buttonGenerator : MonoBehaviour
     public Boss boss1;
     public Boss2 boss2;
     public Boss3 boss3;
- 
+    public Aequatio aequatio;
+
+    public int turnCount = 1;
     public int damageCount = 0;
 
     public GameObject[] button;
@@ -89,6 +91,11 @@ public class buttonGenerator : MonoBehaviour
             
             Expression e = new Expression(currentInput);
             result = e.calculate();
+            turnCount++;
+            if((turnCount%4) == 0)
+            {
+                aequatio.SetHealth(-1);
+            }
 
             if (result == question) // only update result if answer is correct
             {
@@ -105,11 +112,13 @@ public class buttonGenerator : MonoBehaviour
                 }
 
                 else if (boss2.activeSelf()){
+                    turnCount = 1;
                     boss2.SetHealth(-damageCount);
                 }
 
                 else if (boss3.activeSelf())
-                {
+                {   
+                    turnCount = 1;
                     boss3.SetHealth(-damageCount);
                 }
                 //-------------------New Method to be done-----------------------------
@@ -136,6 +145,11 @@ public class buttonGenerator : MonoBehaviour
         yield return new WaitForSeconds(3);
 
         damageText.text = "";
+    }
+
+    private void UpdateTurn()
+    {
+
     }
     private void UpdateDisplay()
     {

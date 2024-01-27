@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Events;
 
-public class healthbar : MonoBehaviour
+public class Aequatio : MonoBehaviour
 {
     public float Health, Maxhealth;
 
@@ -35,6 +37,16 @@ public class healthbar : MonoBehaviour
         Health = Mathf.Clamp(Health, 0, Maxhealth);
 
         healthBar.SetHealth(Health);
+
+        if(Health <= 0)
+        {
+
+            gameObject.SetActive(false);
+            
+            /*
+             * Code prompt fail quest
+             */
+        }
     }
 
 }

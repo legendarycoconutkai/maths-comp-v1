@@ -2031,8 +2031,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f6d0ceea9a32004c90ddc38b939c148, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 50
-  Maxhealth: 80
+  Health: 4
+  Maxhealth: 4
   healthBar: {fileID: 1168633166}
 --- !u!1 &234463487
 GameObject:
@@ -8378,7 +8378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boss1: {fileID: 2064423515}
   boss2: {fileID: 1511364078}
-  boss3: {fileID: 0}
+  boss3: {fileID: 331483211}
+  aequatio: {fileID: 231716854}
+  turnCount: 1
   damageCount: 0
   button:
   - {fileID: 1606540484}
