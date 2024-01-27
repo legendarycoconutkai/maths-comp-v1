@@ -13,6 +13,7 @@ public class buttonGenerator : MonoBehaviour
 
     public Boss boss1;
     public Boss2 boss2;
+    public Boss3 boss3;
  
     public int damageCount = 0;
 
@@ -105,8 +106,14 @@ public class buttonGenerator : MonoBehaviour
 
                 else if (boss2.activeSelf()){
                     boss2.SetHealth(-damageCount);
-                }//-------------------New Method to be done-----------------------------
-                
+                }
+
+                else if (boss3.activeSelf())
+                {
+                    boss3.SetHealth(-damageCount);
+                }
+                //-------------------New Method to be done-----------------------------
+
                 StartCoroutine(DelayCaller());
             }
             else // turns button red as feedback if wrong
