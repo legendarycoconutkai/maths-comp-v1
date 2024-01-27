@@ -6899,7 +6899,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 330.67, y: -87.17001}
+  m_AnchoredPosition: {x: 330.66998, y: -87.17001}
   m_SizeDelta: {x: 569.51, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1106911816
@@ -8095,7 +8095,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe32554fbbf490d4faeb1c611c9425d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boss: {fileID: 2064423515}
+  boss1: {fileID: 2064423515}
+  boss2: {fileID: 1511364078}
   damageCount: 0
   button:
   - {fileID: 1606540484}

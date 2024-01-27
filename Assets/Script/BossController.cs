@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss2Controller : MonoBehaviour
+public class BossController : MonoBehaviour
 {
     public float scrollSpeed = 2f;
     public float scrollDistance = 5f;  // Adjust this value to the distance you want to scroll
@@ -11,11 +11,11 @@ public class Boss2Controller : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
-            StartCoroutine(Boss2Move());
+            StartCoroutine(BossMove());
         }
     }
 
-    public IEnumerator Boss2Move()
+    public IEnumerator BossMove()
     {
         float distanceScrolled = 0f;
 

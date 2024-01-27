@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine.Events;
 
 public class Boss : MonoBehaviour
 {
-    public Boss2Controller controller;
+    public BossController controller;
     public float Health, Maxhealth;
 
     [SerializeField]
@@ -48,12 +49,17 @@ public class Boss : MonoBehaviour
         {
 
             gameObject.SetActive(false);
-            controller.StartCoroutine(controller.Boss2Move());
+            controller.StartCoroutine(controller.BossMove());
 
             healthBar.SetHealth(Maxhealth);
 
         }
         
+    }
+
+    public Boolean activeSelf()
+    {
+        return gameObject.activeSelf;
     }
 }
 
