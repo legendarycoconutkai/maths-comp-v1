@@ -15,6 +15,8 @@ public class buttonGenerator : MonoBehaviour
     public Boss2 boss2;
     public Boss3 boss3;
     public Aequatio aequatio;
+    private static Boolean isFirstTime1 = true;
+    private static Boolean isFirstTime2 = true;
 
     public int turnCount = 1;
     public int damageCount = 0;
@@ -92,7 +94,7 @@ public class buttonGenerator : MonoBehaviour
     {
         try
         {
-            
+            turnCount++;
             Expression e = new Expression(currentInput);
             result = e.calculate();
             
@@ -113,23 +115,36 @@ public class buttonGenerator : MonoBehaviour
                 if (boss1.activeSelf())
                 {
                     boss1.SetHealth(-damageCount);
-                    Debug.Log(1);
                     UpdateTurn();
                 }
 
-                else if (boss2.activeSelf()){
-                    turnCount = 1;
+                else if (boss2.activeSelf())
+                {
                     boss2.SetHealth(-damageCount);
-                    Debug.Log(2);
                     UpdateTurn();
                 }
 
                 else if (boss3.activeSelf())
                 {   
-                    turnCount = 1;
                     boss3.SetHealth(-damageCount);
-                    Debug.Log(3);
                     UpdateTurn();
+                }
+
+                if ((!boss1.activeSelf() && isFirstTime1) || (!boss2.activeSelf() && isFirstTime2))
+                {
+                    turnCount = 1;
+                    UpdateTurn();
+                    if (!boss1.activeSelf() || !boss2.activeSelf())
+                    {
+                        if (isFirstTime1) 
+                        {
+                            isFirstTime1 = false;
+                        }
+                        else if (isFirstTime2)
+                        {
+
+                        }
+                    }
                 }
                 //-------------------New Method to be done-----------------------------
 
@@ -139,7 +154,6 @@ public class buttonGenerator : MonoBehaviour
             {
                 equalButton.GetComponent<Image>().color = Color.red;
                 Invoke(nameof(setEqualButtonWhite), (float)0.2);
-                Debug.Log(4);
                 UpdateTurn();
             }
         }
@@ -162,7 +176,6 @@ public class buttonGenerator : MonoBehaviour
     private void UpdateTurn()
     {
         turnText.text = $"TURN {turnCount.ToString()}";
-        turnCount++;
     }
     private void UpdateDisplay()
     {
