@@ -21,11 +21,11 @@ public class buttonGenerator : MonoBehaviour
     public GameObject defeatPopUp;
     public GameObject unlockPopUp;
     public HBSetting healthBar;
-    private static Boolean isFirstTime1 = true;
-    private static Boolean isFirstTime2 = true;
+    private static Boolean isFirstTime1;
+    private static Boolean isFirstTime2;
 
-    public int turnCount = 1;
-    public int damageCount = 0;
+    public int turnCount;
+    public int damageCount;
 
     public GameObject[] button;
     public TextMeshProUGUI[] buttonText;
@@ -38,8 +38,8 @@ public class buttonGenerator : MonoBehaviour
     public TextMeshProUGUI turnText;
     public TextMeshProUGUI aequatioHealth;
     public TextMeshProUGUI bossHealth;
-    private string currentInput = "";
-    private double result = 0.0;
+    private string currentInput;
+    private double result;
     public GameObject equalButton;
     public TextMeshProUGUI equalButtonText;
 
@@ -48,7 +48,7 @@ public class buttonGenerator : MonoBehaviour
 
     static float question;
 
-    static bool regenerateIsUse = true;
+    static bool regenerateIsUse;
 
     public GameObject UI;
 
@@ -59,6 +59,13 @@ public class buttonGenerator : MonoBehaviour
             operators.Add("!");
         }
 
+        isFirstTime1 = true;
+        isFirstTime2 = true;
+        turnCount = 1;
+        damageCount = 0;
+        currentInput = "";
+        result = 0.0;
+        regenerateIsUse = true;
         buttonState = new bool[button.Length];
         textPosition = new int[button.Length];
 

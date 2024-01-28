@@ -12475,8 +12475,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 1511364075}
-  Health: 20
-  Maxhealth: 20
+  Health: 10
+  Maxhealth: 10
   healthBar: {fileID: 958076664}
 --- !u!1 &2090354691
 GameObject:
