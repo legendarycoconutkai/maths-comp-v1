@@ -122,18 +122,6 @@ public class buttonGenerator : MonoBehaviour
             turnCount++;
             Expression e = new Expression(currentInput);
             result = e.calculate();
-            
-            if((turnCount%4) == 0)
-            {
-                aequatio.SetHealth(-1);
-                UpdateAequatioHealth(); 
-
-                if(aequatio.Health == 0)
-                {
-                    StartCoroutine(defeatPop());
-                    Debug.Log("Die");
-                }
-            }
 
             if (result == question) // only update result if answer is correct
             {
@@ -204,6 +192,18 @@ public class buttonGenerator : MonoBehaviour
                 equalButton.GetComponent<Image>().color = Color.red;
                 Invoke(nameof(setEqualButtonWhite), (float)0.2);
                 UpdateTurn();
+            }
+
+            if ((turnCount % 4) == 0)
+            {
+                aequatio.SetHealth(-1);
+                UpdateAequatioHealth();
+
+                if (aequatio.Health == 0)
+                {
+                    StartCoroutine(defeatPop());
+                    Debug.Log("Die");
+                }
             }
         }
         catch (System.Exception)

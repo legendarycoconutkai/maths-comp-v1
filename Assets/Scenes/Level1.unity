@@ -2473,8 +2473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee98a7b7f2726b347a8776087ca65648, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Health: 30
-  Maxhealth: 30
+  Health: 20
+  Maxhealth: 20
   healthBar: {fileID: 958076664}
 --- !u!114 &331483212
 MonoBehaviour:
@@ -9133,8 +9133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 331483212}
-  Health: 25
-  Maxhealth: 25
+  Health: 15
+  Maxhealth: 15
   healthBar: {fileID: 958076664}
 --- !u!1 &1513138882
 GameObject:
