@@ -36,6 +36,8 @@ public class buttonGenerator : MonoBehaviour
     public TextMeshProUGUI displayText;
     public TextMeshProUGUI damageText;
     public TextMeshProUGUI turnText;
+    public TextMeshProUGUI aequatioHealth;
+    public TextMeshProUGUI bossHealth;
     private string currentInput = "";
     private double result = 0.0;
     public GameObject equalButton;
@@ -73,6 +75,8 @@ public class buttonGenerator : MonoBehaviour
 
         //Turn update on start
         UpdateTurn();
+        StartCoroutine(UpdateBossHealth());
+        UpdateAequatioHealth();
     }
     public void buttonClick(string buttonValue, int buttonIndex)
     {
@@ -115,6 +119,7 @@ public class buttonGenerator : MonoBehaviour
             if((turnCount%4) == 0)
             {
                 aequatio.SetHealth(-1);
+                UpdateAequatioHealth(); 
 
                 if(aequatio.Health == 0)
                 {
@@ -135,6 +140,7 @@ public class buttonGenerator : MonoBehaviour
                 if (boss1.activeSelf())
                 {
                     boss1.SetHealth(-damageCount);
+                    StartCoroutine(UpdateBossHealth());
                     UpdateTurn();
                     if(boss1.Health == 0)
                     {
@@ -145,6 +151,7 @@ public class buttonGenerator : MonoBehaviour
                 else if (boss2.activeSelf())
                 {
                     boss2.SetHealth(-damageCount);
+                    StartCoroutine(UpdateBossHealth());
                     UpdateTurn();
                     if (boss2.Health == 0)
                     {
@@ -155,6 +162,7 @@ public class buttonGenerator : MonoBehaviour
                 else if (boss3.activeSelf())
                 {   
                     boss3.SetHealth(-damageCount);
+                    StartCoroutine(UpdateBossHealth());
                     UpdateTurn();
                     
                     if(boss3.Health == 0)
@@ -176,7 +184,7 @@ public class buttonGenerator : MonoBehaviour
                         }
                         else if (isFirstTime2)
                         {
-
+                            isFirstTime2 = false;
                         }
                     }
                 }
@@ -222,6 +230,40 @@ public class buttonGenerator : MonoBehaviour
     private void UpdateTurn()
     {
         turnText.text = $"TURN {turnCount.ToString()}";
+    }
+    private void UpdateAequatioHealth()
+    {
+        aequatioHealth.text = $"Aequatio's Health: \n\n {aequatio.Health}/{aequatio.Maxhealth}";
+    }
+    private IEnumerator UpdateBossHealth()
+    {
+       
+        if(boss1.Health != 0){
+            bossHealth.text = $"Boss'\n Health: \n\n {boss1.Health}/{boss1.Maxhealth}";
+        }
+        
+        else if (boss1.Health == 0 && isFirstTime1) 
+        {
+            bossHealth.text = $"Boss'\n Health: \n\n {boss1.Health}/{boss1.Maxhealth}";
+            yield return new WaitForSeconds(3);
+            bossHealth.text = $"Boss'\n Health: \n\n {boss2.Health}/{boss2.Maxhealth}";
+        }
+
+        else if(boss2.Health != 0)
+        {
+            bossHealth.text = $"Boss'\n Health: \n\n {boss2.Health}/{boss2.Maxhealth}";
+        }
+        
+        else if(boss2.Health == 0 && isFirstTime2)
+        {
+            bossHealth.text = $"Boss'\n Health: \n\n {boss2.Health}/{boss2.Maxhealth}";
+            yield return new WaitForSeconds(3); 
+            bossHealth.text = $"Boss'\n Health: \n\n {boss3.Health}/{boss3.Maxhealth}";
+        }
+        else
+        {
+            bossHealth.text = $"Boss'\n Health: \n\n {boss3.Health}/{boss3.Maxhealth}";
+        }
     }
     private void UpdateDisplay()
     {
